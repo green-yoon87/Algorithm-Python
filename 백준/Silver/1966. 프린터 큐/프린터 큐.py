@@ -3,8 +3,6 @@ from collections import deque
 
 input = sys.stdin.readline
 num = int(input())
-q = deque()
-answer = []
 for i in range(num):
     q = deque()
     n, m = map(int, input().split())
@@ -13,7 +11,6 @@ for i in range(num):
         q.append((priority[i], i))
 
     order = 0
-    
     maximum = max(q)[0]
     while q:
         element = q.popleft()
