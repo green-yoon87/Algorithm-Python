@@ -1,17 +1,25 @@
 import sys
-n = int(sys.stdin.readline())
-while n>0:
-  cmd = sys.stdin.readline()
-  result =0
-  for i in range(len(cmd)):
-    if cmd[i]=='(':
-      result= result+1
-    elif cmd[i]==')':
-      result =result-1
-    if result<0:
-      break
-  if(result==0):
-    print("YES")
-  else: 
-    print("NO")
-  n=n-1
+input = sys.stdin.readline
+num = int(input())
+
+def isVaild(strList):
+    pair = 0
+    for i in strList:
+        if i == '(':
+            pair +=1
+        elif i == ')':
+            pair -= 1
+        
+        if pair < 0:
+            return "NO"
+    if pair == 0:
+        return "YES"
+    else:
+        return "NO"
+            
+        
+
+for i in range(num):
+    str = list(input())
+    print(isVaild(list(str)))
+            
