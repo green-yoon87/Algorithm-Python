@@ -11,7 +11,7 @@ lines.sort()
 def binarySearch(lines):
     maximum = max(lines)
     start, end, mid= 1, int(sum(lines) /n), 0
-    while end != mid:
+    while end >= start:
         mid = int((start+ end) /2)
         num = 0
         for line in lines:
@@ -19,10 +19,6 @@ def binarySearch(lines):
         if num >= n: 
             start = mid + 1
         else:
-            if mid != 1:
-                end = mid - 1
-            else:
-              return end
-
-    return mid
+            end = mid - 1
+    return end
 print(binarySearch(lines))  
