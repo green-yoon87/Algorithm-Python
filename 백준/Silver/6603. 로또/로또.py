@@ -3,7 +3,6 @@ input = sys.stdin.readline
 def dfs(idx, depth):
     if depth == 6:
         print(*stack)
-        return
     for i in range(idx, num):
         stack.append(arr[i])
         dfs(i+1, depth+1)
