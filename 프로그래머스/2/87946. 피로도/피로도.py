@@ -1,7 +1,6 @@
 answer = 0
 def solution(k, dungeons):
     global answer
-    dungeons.sort(reverse = True, key = lambda x: (x[0], -x[1]))
     def dfs(node, k, num, visited):
         global answer
         num +=1
